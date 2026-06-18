@@ -1,0 +1,199 @@
+/* Yan Rooven Andrew Portfolio — script.js */
+
+// ===== Particle Animation =====
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+const PARTICLE_COUNT = 80;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+function createParticles() {
+  particles = [];
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      radius: Math.random() * 2 + 0.5,
+      opacity: Math.random() * 0.5 + 0.1,
+      color: Math.random() > 0.7 ? '#00d4ff' : Math.random() > 0.5 ? '#7b2ff7' : '#ffffff'
+    });
+  }
+}
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach((p, i) => {
+    p.x += p.vx;
+    p.y += p.vy;
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.opacity;
+    ctx.fill();
+
+    // Draw connections
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = p.x - particles[j].x;
+      const dy = p.y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = p.color;
+        ctx.globalAlpha = (1 - dist / 120) * 0.15;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+  });
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(drawParticles);
+}
+
+resizeCanvas();
+createParticles();
+drawParticles();
+window.addEventListener('resize', () => { resizeCanvas(); createParticles(); });
+
+// ===== Navbar Scroll Effect =====
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== Mobile Menu =====
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.querySelector('.nav-links');
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('active');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('active');
+    navLinks.classList.remove('open');
+  });
+});
+
+// ===== Active Nav Link =====
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY + 100;
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+    const link = document.querySelector(`.nav-link[href="#${id}"]`);
+    if (link) {
+      link.classList.toggle('active', scrollY >= top && scrollY < top + height);
+    }
+  });
+});
+
+// ===== Scroll Reveal =====
+const revealElements = document.querySelectorAll('.glass-card, .section-header, .hero-badge, .hero-actions');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+revealElements.forEach(el => {
+  el.classList.add('reveal');
+  observer.observe(el);
+});
+
+// ===== Skill Tag Hover Glow =====
+document.querySelectorAll('.skill-tag').forEach(tag => {
+  const level = tag.dataset.level;
+  tag.addEventListener('mouseenter', () => {
+    const intensity = level / 100;
+    tag.style.boxShadow = `0 0 ${8 + intensity * 12}px rgba(0,212,255,${intensity * 0.4})`;
+  });
+  tag.addEventListener('mouseleave', () => {
+    tag.style.boxShadow = '';
+  });
+});
+
+// ===== Typing Effect for Code Window =====
+const codeBody = document.querySelector('.code-body pre code');
+if (codeBody) {
+  const originalHTML = codeBody.innerHTML;
+  codeBody.innerHTML = '';
+  let i = 0;
+  const speed = 30;
+  function typeCode() {
+    if (i < originalHTML.length) {
+      if (originalHTML[i] === '<') {
+        const endIndex = originalHTML.indexOf('>', i);
+        if (endIndex !== -1) {
+          codeBody.innerHTML += originalHTML.substring(i, endIndex + 1);
+          i = endIndex + 1;
+        } else {
+          codeBody.innerHTML += originalHTML[i];
+          i++;
+        }
+      } else {
+        codeBody.innerHTML += originalHTML[i];
+        i++;
+      }
+      setTimeout(typeCode, originalHTML[i - 1] === '\n' ? speed * 3 : speed);
+    }
+  }
+  setTimeout(typeCode, 1500);
+}
+
+// ===== Stat Counter Animation =====
+document.querySelectorAll('.stat-number').forEach(stat => {
+  const target = stat.textContent;
+  const isPlus = target.includes('+');
+  const num = parseInt(target);
+  let current = 0;
+  const duration = 2000;
+  const step = num / (duration / 16);
+  
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const animate = () => {
+          current += step;
+          if (current >= num) {
+            stat.textContent = num + (isPlus ? '+' : '');
+            return;
+          }
+          stat.textContent = Math.floor(current) + (isPlus ? '+' : '');
+          requestAnimationFrame(animate);
+        };
+        animate();
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  counterObserver.observe(stat);
+});
+
+// ===== Smooth scroll for anchor links =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
