@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio de Yan Rooven Andrew — Développeur Web & Mobile, Administrateur Réseau">
+<title>Yan Rooven Andrew | Développeur & Admin Réseau</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<!-- Navigation -->
+<nav id="navbar">
+<div class="nav-logo"><span class="logo-bracket">&lt;</span>YRA<span class="logo-bracket">/&gt;</span></div>
+<ul class="nav-links">
+<li><a href="#hero" class="nav-link active">Accueil</a></li>
+<li><a href="#about" class="nav-link">À propos</a></li>
+<li><a href="#skills" class="nav-link">Compétences</a></li>
+<li><a href="#projects" class="nav-link">Projets</a></li>
+<li><a href="#education" class="nav-link">Formation</a></li>
+<li><a href="#contact" class="nav-link">Contact</a></li>
+</ul>
+<button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+<div class="hero-content">
+<div class="hero-badge"><span class="badge-pulse"></span><span>Disponible août 2026 — Opportunités internationales</span></div>
+<h1 class="hero-name">
+<span class="name-line" data-text="Yan">Yan</span>
+<span class="name-line" data-text="Rooven">Rooven</span>
+<span class="name-line accent" data-text="Andrew">Andrew</span>
+</h1>
+<div class="hero-title-wrap">
+<p class="hero-title">
+<span class="title-item">Développeur Web & Mobile</span>
+<span class="title-separator">|</span>
+<span class="title-item">Administrateur Réseau</span>
+</p>
+</div>
+<div class="hero-location">📍 Port-au-Prince, Haiti 🇭🇹</div>
+<div class="hero-actions">
+<a href="#projects" class="btn btn-primary"><span>Voir mes projets</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7.8H7"/></svg></a>
+<a href="https://yanhacking.github.io/cv.pdf" class="btn btn-secondary" download><span>Télécharger CV</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
+</div>
+<div class="hero-stats">
+<div class="stat"><span class="stat-number">79+</span><span class="stat-label">Projets GitHub</span></div>
+<div class="stat"><span class="stat-number">8+</span><span class="stat-label">Applications</span></div>
+<div class="stat"><span class="stat-number">3</span><span class="stat-label">Langues</span></div>
+</div>
+</div>
+<div class="hero-visual">
+<div class="code-window">
+<div class="code-header">
+<div class="code-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+<span class="code-title">yan_portfolio.js</span>
+</div>
+<div class="code-body">
+<pre><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-prop">nom</span>: <span class="code-string">"Yan Rooven Andrew"</span>,
+  <span class="code-prop">role</span>: <span class="code-string">"Dev Web & Mobile"</span>,
+  <span class="code-prop">stack</span>: [<span class="code-string">"React"</span>, <span class="code-string">"Flutter"</span>,
+           <span class="code-string">"Laravel"</span>, <span class="code-string">"Node"</span>],
+  <span class="code-prop">passion</span>: <span class="code-string">"Créer & Innover"</span>,
+  <span class="code-prop">available</span>: <span class="code-string">"2026"</span>
+};
+
+<span class="code-keyword">export</span> <span class="code-keyword">default</span> <span class="code-var">developer</span>;</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<!-- About -->
+<section id="about">
+<div class="section-container">
+<div class="section-header"><span class="section-tag">À PROPOS</span><h2 class="section-title">Qui suis-je ?</h2><div class="section-line"></div></div>
+<div class="about-grid">
+<div class="about-text glass-card">
+<p class="about-intro">Je suis <strong>Yan Rooven Andrew</strong>, développeur web & mobile et administrateur réseau basé à <strong>Port-au-Prince, Haiti</strong> 🇭🇹.</p>
+<p>Passionné par la création d'applications modernes et l'administration d'infrastructures réseau sécurisées, je combine compétences en développement et en réseaux pour offrir des solutions complètes.</p>
+<p>Avec <strong>79+ projets</strong> sur GitHub et une formation en administration réseau Cisco & Microsoft, je cherche des opportunités internationales dès <strong>août 2026</strong>.</p>
+<div class="about-highlights">
+<div class="highlight"><span class="highlight-icon">⚡</span><span>Full-Stack Development</span></div>
+<div class="highlight"><span class="highlight-icon">🔒</span><span>Network Security</span></div>
+<div class="highlight"><span class="highlight-icon">📱</span><span>Mobile Apps</span></div>
+<div class="highlight"><span class="highlight-icon">🌐</span><span>International Ready</span></div>
+</div>
+</div>
+<div class="about-details glass-card">
+<div class="detail-item"><span class="detail-label">Nom</span><span class="detail-value">Yan Rooven Andrew</span></div>
+<div class="detail-item"><span class="detail-label">Nationalité</span><span class="detail-value">Haitienne 🇭🇹</span></div>
+<div class="detail-item"><span class="detail-label">Localisation</span><span class="detail-value">Port-au-Prince, Haiti</span></div>
+<div class="detail-item"><span class="detail-label">Email</span><span class="detail-value"><a href="mailto:yanhaiti@outlook.fr">yanhaiti@outlook.fr</a></span></div>
+<div class="detail-item"><span class="detail-label">Téléphone</span><span class="detail-value"><a href="tel:+50938439956">+509 38 43 9956</a></span></div>
+<div class="detail-item"><span class="detail-label">GitHub</span><span class="detail-value"><a href="https://github.com/yanhacking" target="_blank">@yanhacking</a></span></div>
+<div class="detail-item"><span class="detail-label">Disponibilité</span><span class="detail-value accent">Août 2026</span></div>
+<div class="detail-item"><span class="detail-label">Langues</span><span class="detail-value">FR (natif) · CR (natif) · EN (fonctionnel)</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+<div class="section-container">
+<div class="section-header"><span class="section-tag">COMPÉTENCES</span><h2 class="section-title">Mon Arsenal</h2><div class="section-line"></div></div>
+<div class="skills-grid">
+<div class="skill-category glass-card">
+<div class="skill-category-header"><span class="skill-icon">💻</span><h3>Frontend</h3></div>
+<div class="skill-tags"><span class="skill-tag" data-level="95">React</span><span class="skill-tag" data-level="90">React Native</span><span class="skill-tag" data-level="85">Flutter</span><span class="skill-tag" data-level="95">HTML/CSS</span><span class="skill-tag" data-level="90">JavaScript</span><span class="skill-tag" data-level="75">TypeScript</span></div>
+</div>
+<div class="skill-category glass-card">
+<div class="skill-category-header"><span class="skill-icon">⚙️</span><h3>Backend</h3></div>
+<div class="skill-tags"><span class="skill-tag" data-level="90">Laravel</span><span class="skill-tag" data-level="85">Node.js</span><span class="skill-tag" data-level="80">Express</span><span class="skill-tag" data-level="90">REST APIs</span><span class="skill-tag" data-level="70">Python</span></div>
+</div>
+<div class="skill-category glass-card">
+<div class="skill-category-header"><span class="skill-icon">🗄️</span><h3>Bases de données</h3></div>
+<div class="skill-tags"><span class="skill-tag" data-level="85">MySQL</span><span class="skill-tag" data-level="80">PostgreSQL</span><span class="skill-tag" data-level="75">Firebase</span><span class="skill-tag" data-level="70">MongoDB</span></div>
+</div>
+<div class="skill-category glass-card">
+<div class="skill-category-header"><span class="skill-icon">🌐</span><h3>DevOps & Outils</h3></div>
+<div class="skill-tags"><span class="skill-tag" data-level="95">Git</span><span class="skill-tag" data-level="90">GitHub</span><span class="skill-tag" data-level="75">CI/CD</span><span class="skill-tag" data-level="70">Docker</span><span class="skill-tag" data-level="80">Linux</span></div>
+</div>
+<div class="skill-category glass-card">
+<div class="skill-category-header"><span class="skill-icon">🔒</span><h3>Réseau & Sécurité</h3></div>
+<div class="skill-tags"><span class="skill-tag" data-level="85">Cisco CCNA</span><span class="skill-tag" data-level="80">Windows Server</span><span class="skill-tag" data-level="80">Active Directory</span><span class="skill-tag" data-level="75">VPN</span><span class="skill-tag" data-level="75">Firewalls</span><span class="skill-tag" data-level="70">Network Security</span></div>
+</div>
+<div class="skill-category glass-card">
+<div class="skill-category-header"><span class="skill-icon">🤖</span><h3>IA & Innovation</h3></div>
+<div class="skill-tags"><span class="skill-tag" data-level="80">AI Agents</span><span class="skill-tag" data-level="75">NLP</span><span class="skill-tag" data-level="70">LLM Integration</span><span class="skill-tag" data-level="70">Automation</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+<div class="section-container">
+<div class="section-header"><span class="section-tag">PROJETS</span><h2 class="section-title">Mes Réalisations</h2><div class="section-line"></div></div>
+<div class="projects-grid">
+<div class="project-card glass-card" data-featured="true">
+<div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#00d4ff,#7b2ff7);"><span class="project-emoji">🌊</span></div><div class="project-overlay"><span class="project-category">App Complète</span></div></div>
+<div class="project-info"><h3>Flowa</h3><p>Application complète avec admin, utilisateur, web et chat intégrés. Plateforme tout-en-un.</p><div class="project-tech"><span>React</span><span>React Native</span><span>Node.js</span><span>Firebase</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
+</div>
+<div class="project-card glass-card">
+<div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#f7b731,#eb3b5a);"><span class="project-emoji">💳</span></div><div class="project-overlay"><span class="project-category">Fintech</span></div></div>
+<div class="project-info"><h3>KardPay</h3><p>Solution fintech de paiement — plateforme financière innovante pour transactions digitales.</p><div class="project-tech"><span>Flutter</span><span>Laravel</span><span>REST API</span><span>MySQL</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
+</div>
+<div class="project-card glass-card">
+<div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#a55eea,#3867d6);"><span class="project-emoji">💬</span></div><div class="project-overlay"><span class="project-category">Social</span></div></div>
+<div class="project-info"><h3>FunZone</h3><p>Application sociale avec chat en temps réel — connecter les gens par la conversation.</p><div class="project-tech"><span>React Native</span><span>Node.js</span><span>Firebase</span><span>WebSocket</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
+</div>
+<div class="project-card glass-card">
+<div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#20bf6b,#0fb9b1);"><span class="project-emoji">🏠</span></div><div class="project-overlay"><span class="project-category">Services</span></div></div>
+<div class="project-info"><h3>HouzFresh</h3><p>Application de livraison et services à domicile — simplifier la vie quotidienne.</p><div class="project-tech"><span>Flutter</span><span>Laravel</span><span>REST API</span><span>Maps</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
+</div>
+<div class="project-card glass-card">
+<div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#fc5c65,#fd9644);"><span class="project-emoji">💪</span></div><div class="project-overlay"><span class="project-category">Santé</span></div></div>
+<div class="project-info"><h3>Fitness</h3><p>Application santé & fitness — tracker workouts, nutrition et progressions.</p><div class="project-tech"><span>Flutter</span><span>Firebase</span><span>Charts</span><span>REST</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
+</div>
+<div class="project-card glass-card">
+<div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#4b7bec,#3867d6);"><span class="project-emoji">🛒</span></div><div class="project-overlay"><span class="project-category">E-Commerce</span></div></div>
+<div class="project-info"><h3>BookKart</h3><p>Plateforme e-commerce pour vente en ligne — catalogue, panier et paiements.</p><div class="project-tech"><span>React</span><span>Laravel</span><span>MySQL</span><span>Stripe</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
+</div>
+<div class="project-card glass-card">
+<div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#7b2ff7,#00d4ff);"><span class="project-emoji">🧠</span></div><div class="project-overlay"><span class="project-category">AI</span></div></div>
+<div class="project-info"><h3>Vanessa AI</h3><p>Assistant multi-agent intelligent — systèmes autonomes et conversations contextuelles.</p><div class="project-tech"><span>Node.js</span><span>Python</span><span>AI</span><span>NLP</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
+</div>
+<div class="project-card glass-card">
+<div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#2d98da,#0fb9b1);"><span class="project-emoji">🎤</span></div><div class="project-overlay"><span class="project-category">Assistant</span></div></div>
+<div class="project-info"><h3>Aria</h3><p>Assistant intelligent basé sur Leon AI — interaction vocale et automatisation domestique.</p><div class="project-tech"><span>Node.js</span><span>Express</span><span>AI</span><span>Voice</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Education -->
+<section id="education">
+<div class="section-container">
+<div class="section-header"><span class="section-tag">FORMATION</span><h2 class="section-title">Mon Parcours</h2><div class="section-line"></div></div>
+<div class="education-timeline">
+<div class="timeline-item glass-card">
+<div class="timeline-icon">🎓</div>
+<div class="timeline-content">
+<h3>Diplôme en Administration Réseau</h3>
+<h4>Cisco & Microsoft</h4>
+<p>Formation spécialisée en administration réseau, infrastructure Cisco et environnements Microsoft. CCNA en préparation.</p>
+<div class="timeline-tags"><span class="timeline-tag">Cisco</span><span class="timeline-tag">Microsoft</span><span class="timeline-tag">CCNA</span><span class="timeline-tag">Windows Server</span></div>
+</div>
+<div class="timeline-date">2023 — Août 2026</div>
+</div>
+<div class="timeline-item glass-card">
+<div class="timeline-icon">🏫</div>
+<div class="timeline-content">
+<h3>Canado Technique</h3>
+<h4>Port-au-Prince, Haiti</h4>
+<p>École secondaire technique — formation complète combinant études académiques et compétences techniques en informatique et réseaux.</p>
+<div class="timeline-tags"><span class="timeline-tag">Informatique</span><span class="timeline-tag">Réseaux</span><span class="timeline-tag">Technique</span></div>
+</div>
+<div class="timeline-date">2023 — Août 2026</div>
+</div>
+<div class="timeline-item glass-card current">
+<div class="timeline-icon">📚</div>
+<div class="timeline-content">
+<h3>CCNA en Préparation</h3>
+<h4>Certification Cisco</h4>
+<p>Préparation active à la certification CCNA — maîtrise des fondamentaux réseau : routing, switching, sécurité et automation.</p>
+<div class="timeline-tags"><span class="timeline-tag">Routing</span><span class="timeline-tag">Switching</span><span class="timeline-tag">Security</span><span class="timeline-tag">Automation</span></div>
+</div>
+<div class="timeline-date">En cours</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<div class="section-container">
+<div class="section-header"><span class="section-tag">CONTACT</span><h2 class="section-title">Me Contacter</h2><div class="section-line"></div></div>
+<div class="contact-grid">
+<div class="contact-info glass-card">
+<div class="contact-item">
+<div class="contact-icon">📧</div>
+<div><h4>Email</h4><a href="mailto:yanhaiti@outlook.fr">yanhaiti@outlook.fr</a></div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📱</div>
+<div><h4>Téléphone</h4><a href="tel:+50938439956">+509 38 43 9956</a></div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">💻</div>
+<div><h4>GitHub</h4><a href="https://github.com/yanhacking" target="_blank">@yanhacking</a></div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📍</div>
+<div><h4>Localisation</h4><span>Port-au-Prince, Haiti 🇭🇹</span></div>
+</div>
+</div>
+<div class="contact-cta glass-card">
+<h3>Prêt pour de nouveaux défis !</h3>
+<p>Disponible dès août 2026 pour des opportunités internationales. Développeur polyvalent et administrateur réseau — je suis prêt à contribuer à votre équipe.</p>
+<div class="contact-buttons">
+<a href="mailto:yanhaiti@outlook.fr" class="btn btn-primary"><span>M'envoyer un email</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+<a href="https://github.com/yanhacking" target="_blank" class="btn btn-secondary"><span>Voir mon GitHub</span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+<div class="footer-content">
+<div class="footer-logo"><span class="logo-bracket">&lt;</span>YRA<span class="logo-bracket">/&gt;</span></div>
+<p>Développeur Web & Mobile | Administrateur Réseau</p>
+<p class="footer-location">📍 Port-au-Prince, Haiti 🇭🇹</p>
+<div class="footer-links">
+<a href="https://github.com/yanhacking" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+<a href="mailto:yanhaiti@outlook.fr"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+</div>
+<p class="footer-copy">&copy; 2026 Yan Rooven Andrew. Créé avec passion 🇭🇹</p>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
