@@ -197,3 +197,117 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// ===== 1. Mode clair/sombre toggle =====
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+});
+if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+
+// ===== 2. Animations au scroll (IntersectionObserver) =====
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ===== 3. Cartes 3D tilt =====
+document.querySelectorAll('[data-tilt]').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 10;
+    const rotateY = (centerX - x) / 10;
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+  });
+});
+
+// ===== 4. GitHub Activity Feed =====
+async function loadGitHubActivity() {
+  const container = document.getElementById('github-activity');
+  if (!container) return;
+  try {
+    const [eventsRes, reposRes] = await Promise.all([
+      fetch('https://api.github.com/users/yanhacking/events?per_page=5'),
+      fetch('https://api.github.com/users/yanhacking/repos?sort=updated&per_page=5')
+    ]);
+    const events = await eventsRes.json();
+    const repos = await reposRes.json();
+    let html = '<div class="activity-grid">';
+    repos.forEach(repo => {
+      const updated = new Date(repo.updated_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+      html += `<div class="activity-card glass-card">
+        <div class="activity-header">
+          <span class="activity-icon">📦</span>
+          <a href="${repo.html_url}" target="_blank"><h4>${repo.name}</h4></a>
+        </div>
+        <p class="activity-desc">${repo.description || 'No description'}</p>
+        <div class="activity-meta">
+          <span class="activity-lang" style="background:${getLangColor(repo.language)}"></span>
+          <span>${repo.language || 'N/A'}</span>
+          <span class="activity-date">${updated}</span>
+        </div>
+      </div>`;
+    });
+    html += '</div>';
+    container.innerHTML = html;
+  } catch(e) { container.innerHTML = '<p>Activité GitHub temporairement indisponible</p>'; }
+}
+function getLangColor(lang) {
+  const colors = { JavaScript: '#f1e05a', Python: '#3572A5', TypeScript: '#3178c6', HTML: '#e34c26', CSS: '#563d7c', PHP: '#4F5D95', Dart: '#00B4AB' };
+  return colors[lang] || '#ccc';
+}
+loadGitHubActivity();
+
+// ===== 5. Curseur glow =====
+const cursorGlow = document.getElementById('cursorGlow');
+document.addEventListener('mousemove', (e) => {
+  cursorGlow.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+});
+document.querySelectorAll('a, button, .project-card').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursorGlow.style.width = '40px'; cursorGlow.style.height = '40px'; });
+  el.addEventListener('mouseleave', () => { cursorGlow.style.width = '20px'; cursorGlow.style.height = '20px'; });
+});
+
+// ===== 6. Formulaire de contact =====
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('contactName').value;
+    const email = document.getElementById('contactEmail').value;
+    const message = document.getElementById('contactMessage').value;
+    const subject = encodeURIComponent(`Contact portfolio - ${name}`);
+    const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:yanhaiti@outlook.fr?subject=${subject}&body=${body}`;
+  });
+}
+
+// ===== 7. Typewriter effect =====
+const typewriter = document.getElementById('typewriter');
+if (typewriter) {
+  const text = typewriter.textContent;
+  typewriter.textContent = '';
+  typewriter.classList.add('typewriter-active');
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      typewriter.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 80);
+    }
+  }
+  setTimeout(type, 500);
+}

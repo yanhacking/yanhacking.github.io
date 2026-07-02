@@ -25,11 +25,12 @@
 <li><a href="#education" class="nav-link">Formation</a></li>
 <li><a href="#contact" class="nav-link">Contact</a></li>
 </ul>
+<button class="theme-toggle" id="themeToggle" aria-label="Changer de thème"><svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
 <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- Hero -->
-<section id="hero">
+<section id="hero" class="reveal">
 <div class="hero-content">
 <div class="hero-badge"><span class="badge-pulse"></span><span>Disponible août 2026 — Opportunités internationales</span></div>
 <h1 class="hero-name">
@@ -39,7 +40,7 @@
 </h1>
 <div class="hero-title-wrap">
 <p class="hero-title">
-<span class="title-item">Développeur Web & Mobile</span>
+<span class="title-item" id="typewriter">Développeur Web & Mobile</span>
 <span class="title-separator">|</span>
 <span class="title-item">Administrateur Réseau</span>
 </p>
@@ -78,7 +79,7 @@
 </section>
 
 <!-- About -->
-<section id="about">
+<section id="about" class="reveal">
 <div class="section-container">
 <div class="section-header"><span class="section-tag">À PROPOS</span><h2 class="section-title">Qui suis-je ?</h2><div class="section-line"></div></div>
 <div class="about-grid">
@@ -108,7 +109,7 @@
 </section>
 
 <!-- Skills -->
-<section id="skills">
+<section id="skills" class="reveal">
 <div class="section-container">
 <div class="section-header"><span class="section-tag">COMPÉTENCES</span><h2 class="section-title">Mon Arsenal</h2><div class="section-line"></div></div>
 <div class="skills-grid">
@@ -141,43 +142,43 @@
 </section>
 
 <!-- Projects -->
-<section id="projects">
+<section id="projects" class="reveal">
 <div class="section-container">
 <div class="section-header"><span class="section-tag">PROJETS</span><h2 class="section-title">Mes Réalisations</h2><div class="section-line"></div></div>
 <div class="projects-grid">
-<div class="project-card glass-card" data-featured="true">
+<div class="project-card glass-card" data-featured="true" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
 <div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#0f172a,#06b6d4);"><span class="project-emoji">🛡️</span></div><div class="project-overlay"><span class="project-category">Surveillance Réseau IA</span></div></div>
 <div class="project-info"><h3>Verinex Monitor</h3><p>Plateforme IA de surveillance réseau en temps réel — 6 modules IA (anomalies, prédiction de pannes, analyse trafic, assistant, optimisation, rapports). 6 méthodes de connexion. Produit live.</p><div class="project-tech"><span>React</span><span>Python</span><span>AI</span><span>SNMP</span></div><div class="project-links"><a href="https://verinexmonitor.com" target="_blank" class="project-link" title="Site live"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a><a href="https://github.com/yanhacking" target="_blank" class="project-link" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
 </div>
-<div class="project-card glass-card" data-featured="true">
+<div class="project-card glass-card" data-featured="true" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
 <div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#00d4ff,#7b2ff7);"><span class="project-emoji">🌊</span></div><div class="project-overlay"><span class="project-category">App Complète</span></div></div>
 <div class="project-info"><h3>Flowa</h3><p>Application complète avec admin, utilisateur, web et chat intégrés. Plateforme tout-en-un.</p><div class="project-tech"><span>React</span><span>React Native</span><span>Node.js</span><span>Firebase</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
 </div>
-<div class="project-card glass-card">
+<div class="project-card glass-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
 <div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#f7b731,#eb3b5a);"><span class="project-emoji">💳</span></div><div class="project-overlay"><span class="project-category">Fintech</span></div></div>
 <div class="project-info"><h3>KardPay</h3><p>Solution fintech de paiement — plateforme financière innovante pour transactions digitales.</p><div class="project-tech"><span>Flutter</span><span>Laravel</span><span>REST API</span><span>MySQL</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
 </div>
-<div class="project-card glass-card">
+<div class="project-card glass-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
 <div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#a55eea,#3867d6);"><span class="project-emoji">💬</span></div><div class="project-overlay"><span class="project-category">Social</span></div></div>
 <div class="project-info"><h3>FunZone</h3><p>Application sociale avec chat en temps réel — connecter les gens par la conversation.</p><div class="project-tech"><span>React Native</span><span>Node.js</span><span>Firebase</span><span>WebSocket</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
 </div>
-<div class="project-card glass-card">
+<div class="project-card glass-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
 <div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#20bf6b,#0fb9b1);"><span class="project-emoji">🏠</span></div><div class="project-overlay"><span class="project-category">Services</span></div></div>
 <div class="project-info"><h3>HouzFresh</h3><p>Application de livraison et services à domicile — simplifier la vie quotidienne.</p><div class="project-tech"><span>Flutter</span><span>Laravel</span><span>REST API</span><span>Maps</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
 </div>
-<div class="project-card glass-card">
+<div class="project-card glass-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
 <div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#fc5c65,#fd9644);"><span class="project-emoji">💪</span></div><div class="project-overlay"><span class="project-category">Santé</span></div></div>
 <div class="project-info"><h3>Fitness</h3><p>Application santé & fitness — tracker workouts, nutrition et progressions.</p><div class="project-tech"><span>Flutter</span><span>Firebase</span><span>Charts</span><span>REST</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
 </div>
-<div class="project-card glass-card">
+<div class="project-card glass-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
 <div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#4b7bec,#3867d6);"><span class="project-emoji">🛒</span></div><div class="project-overlay"><span class="project-category">E-Commerce</span></div></div>
 <div class="project-info"><h3>BookKart</h3><p>Plateforme e-commerce pour vente en ligne — catalogue, panier et paiements.</p><div class="project-tech"><span>React</span><span>Laravel</span><span>MySQL</span><span>Stripe</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
 </div>
-<div class="project-card glass-card">
+<div class="project-card glass-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
 <div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#7b2ff7,#00d4ff);"><span class="project-emoji">🧠</span></div><div class="project-overlay"><span class="project-category">AI</span></div></div>
 <div class="project-info"><h3>Vanessa AI</h3><p>Assistant multi-agent intelligent — systèmes autonomes et conversations contextuelles.</p><div class="project-tech"><span>Node.js</span><span>Python</span><span>AI</span><span>NLP</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
 </div>
-<div class="project-card glass-card">
+<div class="project-card glass-card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
 <div class="project-image"><div class="project-placeholder" style="background:linear-gradient(135deg,#2d98da,#0fb9b1);"><span class="project-emoji">🎤</span></div><div class="project-overlay"><span class="project-category">Assistant</span></div></div>
 <div class="project-info"><h3>Aria</h3><p>Assistant intelligent basé sur Leon AI — interaction vocale et automatisation domestique.</p><div class="project-tech"><span>Node.js</span><span>Express</span><span>AI</span><span>Voice</span></div><div class="project-links"><a href="https://github.com/yanhacking" target="_blank" class="project-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a></div></div>
 </div>
@@ -185,8 +186,18 @@
 </div>
 </section>
 
+<!-- GitHub Activity -->
+<section id="github-activity-section" class="reveal">
+<div class="section-container">
+<div class="section-header"><span class="section-tag">ACTIVITÉ</span><h2 class="section-title">Ce que je fais maintenant</h2><div class="section-line"></div></div>
+<div id="github-activity" class="github-activity-grid">
+<div class="github-loading"><div class="spinner"></div><p>Chargement de l'activité GitHub...</p></div>
+</div>
+</div>
+</section>
+
 <!-- Education -->
-<section id="education">
+<section id="education" class="reveal">
 <div class="section-container">
 <div class="section-header"><span class="section-tag">FORMATION</span><h2 class="section-title">Mon Parcours</h2><div class="section-line"></div></div>
 <div class="education-timeline">
@@ -225,7 +236,7 @@
 </section>
 
 <!-- Contact -->
-<section id="contact">
+<section id="contact" class="reveal">
 <div class="section-container">
 <div class="section-header"><span class="section-tag">CONTACT</span><h2 class="section-title">Me Contacter</h2><div class="section-line"></div></div>
 <div class="contact-grid">
@@ -247,13 +258,24 @@
 <div><h4>Localisation</h4><span>Port-au-Prince, Haiti 🇭🇹</span></div>
 </div>
 </div>
-<div class="contact-cta glass-card">
-<h3>Prêt pour de nouveaux défis !</h3>
-<p>Disponible dès août 2026 pour des opportunités internationales. Développeur polyvalent et administrateur réseau — je suis prêt à contribuer à votre équipe.</p>
-<div class="contact-buttons">
-<a href="mailto:yanhaiti@outlook.fr" class="btn btn-primary"><span>M'envoyer un email</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
-<a href="https://github.com/yanhacking" target="_blank" class="btn btn-secondary"><span>Voir mon GitHub</span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.835 1.305 3.51 1.005.105-.78.42-1.305.765-1.605-2.67-.3-5.47-1.335-5.47-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+<div class="contact-form-card glass-card">
+<h3>Envoyez-moi un message</h3>
+<p>Disponible dès août 2026 pour des opportunités internationales.</p>
+<form id="contactForm" class="contact-form">
+<div class="form-group">
+<label for="contactName">Nom</label>
+<input type="text" id="contactName" name="name" placeholder="Votre nom" required>
 </div>
+<div class="form-group">
+<label for="contactEmail">Email</label>
+<input type="email" id="contactEmail" name="email" placeholder="votre@email.com" required>
+</div>
+<div class="form-group">
+<label for="contactMessage">Message</label>
+<textarea id="contactMessage" name="message" placeholder="Votre message..." rows="5" required></textarea>
+</div>
+<button type="submit" class="btn btn-primary"><span>Envoyer</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+</form>
 </div>
 </div>
 </div>
@@ -273,6 +295,7 @@
 </div>
 </footer>
 
+<div class="cursor-glow" id="cursorGlow"></div>
 <script src="script.js"></script>
 </body>
 </html>

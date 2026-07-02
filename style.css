@@ -463,3 +463,520 @@ section{position:relative;z-index:1}
   .skill-tag:hover{transform:none}
   .project-overlay{opacity:1}
 }
+
+/* ============================================================
+   1. MODE CLAIR / SOMBRE — Light Theme Variables
+   ============================================================ */
+body.light-mode{
+  --bg-primary:#f5f5f5;
+  --bg-secondary:#e8e8f0;
+  --bg-card:rgba(255,255,255,0.7);
+  --bg-card-hover:rgba(255,255,255,0.9);
+  --border-card:rgba(0,0,0,0.1);
+  --text-primary:#1a1a2e;
+  --text-secondary:#444466;
+  --text-muted:#8888aa;
+  --gradient-main:linear-gradient(135deg,#f5f5f5 0%,#e0e0f0 30%,#e8e8f5 60%,#f5f5f5 100%);
+  --gradient-hero:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(123,47,247,0.08));
+}
+body.light-mode .glass-card{
+  background:#fff;
+  border-color:rgba(0,0,0,0.08);
+  box-shadow:0 4px 20px rgba(0,0,0,0.06);
+}
+body.light-mode .glass-card:hover{
+  background:#fff;
+  box-shadow:0 8px 32px rgba(0,212,255,0.12),0 2px 8px rgba(123,47,247,0.08);
+}
+body.light-mode #navbar{
+  background:rgba(245,245,245,0.9);
+  border-bottom-color:rgba(0,0,0,0.06);
+}
+body.light-mode #navbar.scrolled{
+  background:rgba(245,245,245,0.98);
+}
+body.light-mode .code-window{
+  background:rgba(255,255,255,0.9);
+  border-color:rgba(0,0,0,0.1);
+  box-shadow:0 8px 32px rgba(0,0,0,0.08),0 0 60px rgba(0,212,255,0.04);
+}
+body.light-mode .code-header{
+  background:rgba(0,0,0,0.03);
+  border-bottom-color:rgba(0,0,0,0.06);
+}
+body.light-mode .code-body pre{color:#444466}
+body.light-mode #footer{
+  background:rgba(245,245,245,0.8);
+  border-top-color:rgba(0,0,0,0.06);
+}
+body.light-mode .hero-badge{
+  background:rgba(0,212,255,0.08);
+  border-color:rgba(0,212,255,0.2);
+}
+body.light-mode .skill-tag{
+  background:rgba(0,212,255,0.06);
+  border-color:rgba(0,212,255,0.15);
+}
+body.light-mode .project-tech span{
+  background:rgba(123,47,247,0.08);
+  border-color:rgba(123,47,247,0.15);
+}
+body.light-mode .nav-link:hover,
+body.light-mode .nav-link.active{
+  background:rgba(0,212,255,0.06);
+}
+body.light-mode .highlight{
+  background:rgba(0,212,255,0.04);
+}
+body.light-mode .detail-item{
+  border-bottom-color:rgba(0,0,0,0.06);
+}
+body.light-mode .contact-item{
+  border-bottom-color:rgba(0,0,0,0.06);
+}
+body.light-mode .timeline-icon{
+  background:rgba(0,212,255,0.08);
+}
+body.light-mode .timeline-item.current{
+  border-color:rgba(0,212,255,0.2);
+}
+body.light-mode .nav-links{
+  background:rgba(245,245,245,0.98);
+}
+body.light-mode ::selection{
+  background:var(--accent);
+  color:#fff;
+}
+
+/* ============================================================
+   2. ANIMATIONS AU SCROLL — Reveal Classes
+   ============================================================ */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+.reveal.active > *:nth-child(1){transition-delay:0s}
+.reveal.active > *:nth-child(2){transition-delay:0.1s}
+.reveal.active > *:nth-child(3){transition-delay:0.2s}
+.reveal.active > *:nth-child(4){transition-delay:0.3s}
+.reveal.active > *:nth-child(5){transition-delay:0.4s}
+.reveal.active > *:nth-child(6){transition-delay:0.5s}
+.reveal.active > *:nth-child(7){transition-delay:0.6s}
+.reveal.active > *:nth-child(8){transition-delay:0.7s}
+.reveal[data-delay="1"]{transition-delay:0.1s}
+.reveal[data-delay="2"]{transition-delay:0.2s}
+.reveal[data-delay="3"]{transition-delay:0.3s}
+.reveal[data-delay="4"]{transition-delay:0.4s}
+.reveal[data-delay="5"]{transition-delay:0.5s}
+
+/* ============================================================
+   3. CARTES 3D TILT — Project Cards with Tilt Effect
+   ============================================================ */
+.project-card[data-tilt]{
+  transform-style:preserve-3d;
+  transition:transform 0.1s ease,box-shadow 0.3s ease;
+  will-change:transform;
+}
+.project-card[data-tilt] .project-info{
+  transform:translateZ(40px);
+}
+.project-card[data-tilt] .project-image{
+  transform:translateZ(30px);
+}
+.project-card[data-tilt] .project-tech{
+  transform:translateZ(20px);
+}
+.project-card[data-tilt] .project-links{
+  transform:translateZ(25px);
+}
+.project-card[data-tilt] .project-category{
+  transform:translateZ(50px);
+}
+.project-card[data-tilt]:hover{
+  box-shadow:0 20px 40px rgba(0,0,0,0.3),0 0 30px rgba(0,212,255,0.15);
+}
+
+/* ============================================================
+   4. SECTION GITHUB ACTIVITY — Style for #github-activity
+   ============================================================ */
+#github-activity{
+  position:relative;z-index:1;
+}
+.github-activity-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:var(--space-md);
+  margin-top:var(--space-md);
+}
+.github-event-card{
+  background:var(--bg-card);
+  border:1px solid var(--border-card);
+  border-radius:var(--radius);
+  backdrop-filter:blur(var(--glass-blur));
+  -webkit-backdrop-filter:blur(var(--glass-blur));
+  padding:clamp(16px,2vw,24px);
+  transition:transform var(--transition),background var(--transition),box-shadow var(--transition);
+}
+.github-event-card:hover{
+  background:var(--bg-card-hover);
+  transform:translateY(-4px);
+  box-shadow:0 8px 32px rgba(0,212,255,0.1);
+}
+.github-event-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+.github-event-type{
+  font-size:var(--fs-xs);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--accent);
+  padding:4px 10px;
+  background:rgba(0,212,255,0.1);
+  border-radius:50px;
+}
+.github-event-date{
+  font-size:var(--fs-xs);
+  color:var(--text-muted);
+  white-space:nowrap;
+}
+.github-event-card h4{
+  font-size:var(--fs-base);
+  font-weight:600;
+  margin-bottom:8px;
+  color:var(--text-primary);
+}
+.github-event-card p{
+  font-size:var(--fs-sm);
+  color:var(--text-secondary);
+}
+.github-lang-indicator{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:8px;
+  font-size:var(--fs-xs);
+  color:var(--text-muted);
+}
+.github-lang-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  display:inline-block;
+}
+.github-lang-dot.javascript{background:#f1e05a}
+.github-lang-dot.python{background:#3572A5}
+.github-lang-dot.typescript{background:#3178c6}
+.github-lang-dot.html{background:#e34c26}
+.github-lang-dot.css{background:#563d7c}
+.github-lang-dot.go{background:#00ADD8}
+.github-lang-dot.rust{background:#dea584}
+.github-lang-dot.java{background:#b07219}
+.github-lang-dot.shell{background:#89e051}
+.github-lang-dot.other{background:#8b8b8b}
+.github-stats-row{
+  display:flex;
+  gap:16px;
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid var(--border-card);
+}
+.github-stat-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:var(--fs-xs);
+  color:var(--text-muted);
+}
+.github-stat-item strong{
+  color:var(--text-primary);
+  font-weight:600;
+}
+
+/* ============================================================
+   5. CURSEUR GLOW — Glowing Cursor Follower
+   ============================================================ */
+.cursor-glow{
+  position:fixed;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,0.4),transparent);
+  pointer-events:none;
+  z-index:9999;
+  transition:transform 0.1s ease,width 0.3s,height 0.3s;
+  mix-blend-mode:screen;
+  transform:translate(-50%,-50%);
+  left:0;
+  top:0;
+}
+.cursor-glow.cursor-glow--hover{
+  width:50px;
+  height:50px;
+  background:radial-gradient(circle,rgba(123,47,247,0.3),transparent);
+}
+@media(hover:none){
+  .cursor-glow{display:none}
+}
+
+/* ============================================================
+   6. FORMULAIRE DE CONTACT — Contact Form
+   ============================================================ */
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:var(--space-sm);
+}
+.contact-form .form-group{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.contact-form label{
+  font-size:var(--fs-sm);
+  font-weight:500;
+  color:var(--text-secondary);
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px 18px;
+  font-size:var(--fs-base);
+  font-family:var(--font-main);
+  color:var(--text-primary);
+  background:var(--bg-card);
+  border:1px solid var(--border-card);
+  border-radius:var(--radius-sm);
+  backdrop-filter:blur(var(--glass-blur));
+  -webkit-backdrop-filter:blur(var(--glass-blur));
+  transition:border-color var(--transition),box-shadow var(--transition),background var(--transition);
+  outline:none;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color:var(--text-muted);
+  opacity:0.7;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:var(--accent);
+  background:var(--bg-card-hover);
+  box-shadow:0 0 0 3px rgba(0,212,255,0.15),0 0 20px rgba(0,212,255,0.1);
+}
+.contact-form textarea{
+  min-height:140px;
+  resize:vertical;
+  line-height:1.6;
+}
+.contact-form .btn-submit{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 28px;
+  font-size:var(--fs-base);
+  font-weight:600;
+  font-family:var(--font-main);
+  color:#fff;
+  background:var(--gradient-accent);
+  border:none;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  min-height:var(--touch-min);
+  transition:transform var(--transition),box-shadow var(--transition),opacity var(--transition);
+  position:relative;
+  overflow:hidden;
+}
+.contact-form .btn-submit:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 24px rgba(0,212,255,0.35);
+}
+.contact-form .btn-submit:active{
+  transform:translateY(0);
+}
+.contact-form .btn-submit:disabled{
+  opacity:0.6;
+  cursor:not-allowed;
+  transform:none;
+}
+.contact-form .form-feedback{
+  padding:12px 16px;
+  border-radius:var(--radius-sm);
+  font-size:var(--fs-sm);
+  text-align:center;
+  display:none;
+}
+.contact-form .form-feedback.success{
+  display:block;
+  background:rgba(15,185,177,0.1);
+  border:1px solid rgba(15,185,177,0.3);
+  color:var(--accent3);
+}
+.contact-form .form-feedback.error{
+  display:block;
+  background:rgba(255,87,87,0.1);
+  border:1px solid rgba(255,87,87,0.3);
+  color:#ff5757;
+}
+
+/* ============================================================
+   7. TYPEWRITER — Typing Effect
+   ============================================================ */
+#typewriter{
+  border-right:3px solid var(--accent);
+  animation:blink 0.7s infinite;
+  display:inline-block;
+  min-height:1.2em;
+}
+@keyframes blink{
+  50%{border-color:transparent}
+}
+
+/* ============================================================
+   8. BOUTON THÈME TOGGLE — Dark/Light Mode Switch
+   ============================================================ */
+.theme-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:var(--bg-card);
+  border:1px solid var(--border-card);
+  cursor:pointer;
+  transition:background var(--transition),transform var(--transition),box-shadow var(--transition);
+  position:relative;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.theme-toggle:hover{
+  background:var(--bg-card-hover);
+  transform:rotate(20deg) scale(1.1);
+  box-shadow:0 0 16px rgba(0,212,255,0.2);
+}
+.theme-toggle:active{
+  transform:scale(0.95);
+}
+.theme-toggle svg{
+  width:20px;
+  height:20px;
+  transition:opacity var(--transition),transform var(--transition);
+}
+.icon-sun{display:none}
+body.light-mode .icon-sun{display:block}
+body.light-mode .icon-moon{display:none}
+
+/* Theme toggle in navbar alignment */
+#navbar .theme-toggle{
+  margin-left:8px;
+}
+
+/* Responsive: smaller toggle on mobile */
+@media(max-width:768px){
+  .theme-toggle{
+    width:36px;
+    height:36px;
+  }
+  .theme-toggle svg{
+    width:18px;
+    height:18px;
+  }
+}
+@media(max-width:480px){
+  .theme-toggle{
+    width:34px;
+    height:34px;
+  }
+  .theme-toggle svg{
+    width:16px;
+    height:16px;
+  }
+}
+
+/* ============================================================
+   GITHUB ACTIVITY — Loading & Activity Cards (JS-generated)
+   ============================================================ */
+.github-loading{
+  text-align:center;
+  padding:40px;
+  color:var(--text-muted);
+  grid-column:1 / -1;
+}
+.github-loading .spinner{
+  width:40px;height:40px;margin:0 auto 16px;
+  border:3px solid rgba(0,212,255,0.2);
+  border-top-color:var(--accent);
+  border-radius:50%;
+  animation:spin 0.8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.activity-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:var(--space-md);
+}
+.activity-card{
+  padding:clamp(16px,2vw,24px);
+}
+.activity-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+.activity-header h4{
+  font-size:var(--fs-base);
+  font-weight:600;
+  color:var(--accent);
+}
+.activity-icon{
+  font-size:1.2rem;
+}
+.activity-desc{
+  font-size:var(--fs-sm);
+  color:var(--text-secondary);
+  margin-bottom:12px;
+  line-height:1.5;
+}
+.activity-meta{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:var(--fs-xs);
+  color:var(--text-muted);
+}
+.activity-lang{
+  width:10px;height:10px;
+  border-radius:50%;
+  display:inline-block;
+}
+.activity-date{
+  margin-left:auto;
+}
+
+/* Contact form card */
+.contact-form-card{
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+}
+.contact-form-card h3{
+  font-size:var(--fs-xl);
+  font-weight:700;
+  margin-bottom:8px;
+}
+.contact-form-card > p{
+  font-size:var(--fs-base);
+  color:var(--text-secondary);
+  margin-bottom:var(--space-md);
+}
